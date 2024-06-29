@@ -1,4 +1,20 @@
 spring:
+  datasource:
+    url: jdbc:mysql://103.218.122.180:3306/cntt_master_qlbh2022
+    username: trandat
+    password: 123456789
+
+  jpa:
+    hibernate:
+#        ddl-auto: none
+      ddl-auto: update
+#        ddl-auto: create-drop
+
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL55Dialect
+
+
   security:
     oauth2:
       authorizationserver:
