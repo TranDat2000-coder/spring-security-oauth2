@@ -6,4 +6,4 @@ spring:
     oauth2:
       resource-server:
         jwt:
-          issuer-uri: http://localhost:8080
+          jwk-set-uri: http://localhost:8082/api/auth/generateToken
