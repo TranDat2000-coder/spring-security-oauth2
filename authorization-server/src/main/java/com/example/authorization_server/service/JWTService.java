@@ -22,7 +22,8 @@ public class JWTService {
     public String generateToken(Authentication authentication){
 
         UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
-        Map<String, Object> claims = new HashMap<>();
+        Map<String, String> claims = new HashMap<>();
+        claims.put("scope", "read");
 
         return Jwts.builder()
                 .setClaims(claims)
