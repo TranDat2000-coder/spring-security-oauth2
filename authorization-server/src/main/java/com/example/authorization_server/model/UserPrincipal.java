@@ -1,6 +1,6 @@
 package com.example.authorization_server.model;
 
-import com.example.authorization_server.entity.User;
+import com.example.authorization_server.entity.UserEntity;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -28,18 +28,19 @@ public class UserPrincipal implements UserDetails {
         this.roles = roles;
     }
 
-    public static UserPrincipal build(User user){
-
-        List<GrantedAuthority> authorities = user.getRoles().
-                stream().map(role -> new SimpleGrantedAuthority(role.getName()))
-                .collect(Collectors.toList());
-        return new UserPrincipal(
-                user.getId(),
-                user.getUsername(),
-                user.getPassword(),
-                authorities
-        );
-    }
+//    public static UserPrincipal build(UserEntity user){
+//
+//        List<GrantedAuthority> authorities = user.getRoles().
+//                stream().map(role -> new SimpleGrantedAuthority(role.getName()))
+//                .collect(Collectors.toList());
+//
+//        return new UserPrincipal(
+//                user.getId(),
+//                user.getUsername(),
+//                user.getPassword(),
+//                authorities
+//        );
+//    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

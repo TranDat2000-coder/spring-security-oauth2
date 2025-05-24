@@ -16,6 +16,11 @@ public class AuthController {
     @Autowired
     private AuthService authService;
 
+    @PostMapping("/registration-user")
+    public ResponseEntity<?> registerUser(@RequestBody AuthRequest authRequest) {
+        return ResponseEntity.ok("");
+    }
+
     @PostMapping("/generateToken")
     public ResponseEntity<?> generateToken(@RequestBody AuthRequest authRequest){
         return authService.authenticateGetToken(authRequest);
